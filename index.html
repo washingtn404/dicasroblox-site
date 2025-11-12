@@ -1,150 +1,310 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DicasRoblox - Dicas de Jogos e Como Ganhar Robux</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DicasRoblox News — Notícias e Jogos que dão Robux</title>
+  <meta name="description" content="Portal de notícias do Roblox e lista de jogos que dão Robux (PLS DONATE, Starving Artists etc.). Atualiza automaticamente via RSS." />
   <style>
-    body {
-      background-color: #0f172a;
-      color: #e2e8f0;
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+    :root{
+      --bg:#071022;
+      --card:#0f1724;
+      --accent:#ff4757;
+      --muted:#9aa6bb;
+      --glass:rgba(255,255,255,0.03);
+      --accent-2:#2563eb;
+      --maxw:1100px;
     }
-
-    header {
-      background-color: #1e293b;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-    }
-
-    header h1 {
-      font-size: 20px;
-      color: #f87171;
-      margin: 0;
-    }
-
-    nav a {
-      color: #e2e8f0;
-      text-decoration: none;
-      margin: 0 15px;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #f87171;
-    }
-
-    .hero {
-      margin-top: 60px;
-    }
-
-    .hero h2 {
-      font-size: 32px;
-    }
-
-    .hero a {
-      display: inline-block;
-      background-color: #ef4444;
-      color: #fff;
-      padding: 12px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-      margin-top: 15px;
-    }
-
-    .hero a:hover {
-      background-color: #dc2626;
-    }
-
-    .preview {
-      margin: 60px auto;
-      max-width: 900px;
-    }
-
-    .preview h3 {
-      font-size: 26px;
-      color: #fbbf24;
-    }
-
-    .game-preview {
-      background-color: #1e293b;
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .game-preview img {
-      width: 200px;
-      border-radius: 10px;
-      margin: 10px 0;
-    }
-
-    .game-preview a {
-      display: inline-block;
-      background-color: #ef4444;
-      color: white;
-      padding: 8px 18px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .game-preview a:hover {
-      background-color: #dc2626;
-    }
-
-    footer {
-      color: #94a3b8;
-      font-size: 14px;
-      margin: 40px 0;
-    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,var(--bg),#041021);color:#e6eef8;display:flex;justify-content:center}
+    .wrap{width:100%;max-width:var(--maxw);padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#ff6b81,var(--accent));display:flex;align-items:center;justify-content:center;font-weight:800;color:white}
+    nav a{color:var(--muted);text-decoration:none;margin-left:12px;font-weight:600}
+    nav a:hover{color:white}
+    .hero{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.6);margin-bottom:18px}
+    h1{margin:0;font-size:24px}
+    p.lead{color:var(--muted);margin:8px 0 0}
+    .cta{margin-top:16px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#ff7b8a);color:white;text-decoration:none;font-weight:700}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+    @media(max-width:920px){.grid{grid-template-columns:1fr}}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px}
+    .news-list{display:flex;flex-direction:column;gap:12px}
+    .news-item{display:flex;gap:12px;align-items:flex-start}
+    .news-thumb{width:120px;height:68px;border-radius:8px;object-fit:cover;background:#0b1220;flex-shrink:0}
+    .news-meta{flex:1}
+    .news-meta h4{margin:0;font-size:15px}
+    .news-meta p{margin:6px 0 0;color:var(--muted);font-size:13px}
+    .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+    .games{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .game-card{background:transparent;padding:10px;border-radius:10px;text-align:center;border:1px solid rgba(255,255,255,0.03)}
+    .game-card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:22px;color:var(--muted);text-align:center;font-size:13px}
+    a.secondary{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent-2);color:white;text-decoration:none;font-weight:700}
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">DR</div>
+        <div>
+          <div style="font-weight:800">DicasRoblox News</div>
+          <div class="small">Notícias automáticas e jogos que rendem Robux</div>
+        </div>
+      </div>
 
-  <header>
-    <h1>DicasRoblox</h1>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="ganhar-robux.html">Ganhar Robux</a>
-    </nav>
-  </header>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="#jogos">Jogos</a>
+        <a href="#noticias">Notícias</a>
+      </nav>
+    </header>
 
-  <section class="hero">
-    <h2>Bem-vindo ao DicasRoblox 🎮</h2>
-    <p>Aqui você encontra as melhores dicas de jogos e como ganhar Robux jogando!</p>
-    <a href="ganhar-robux.html">💸 Como Ganhar Robux</a>
-  </section>
+    <section class="hero card">
+      <h1>Portal DicasRoblox — Notícias e oportunidades de ganhar Robux</h1>
+      <p class="lead">Últimas notícias do Roblox puxadas automaticamente. Abaixo você encontrará jogos que permitem ganhar Robux e links rápidos para jogar.</p>
+      <div class="cta">
+        <a class="btn" href="#noticias">Ver últimas notícias</a>
+        <a class="btn" style="margin-left:10px;background:linear-gradient(90deg,#2563eb,#3b82f6)" href="#jogos">Jogos que dão Robux</a>
+      </div>
+    </section>
 
-  <section class="preview">
-    <h3>Veja alguns jogos que dão Robux 👇</h3>
+    <div class="grid">
+      <!-- coluna principal: notícias -->
+      <main>
+        <div id="noticias" class="card" style="margin-bottom:18px">
+          <div class="section-title">
+            <h2 style="margin:0">📰 Notícias do Roblox</h2>
+            <div class="small">Atualizado automaticamente</div>
+          </div>
 
-    <div class="game-preview">
-      <h4>💰 PLS DONATE</h4>
-      <img src="https://tr.rbxcdn.com/3aee7584a5579e720b15c81520cfb4c6/420/420/Image/Png" alt="PLS DONATE">
-      <p>Crie uma barraca de doações e ganhe Robux dos outros jogadores!</p>
-      <a href="ganhar-robux.html">Ver mais</a>
+          <div id="news-container" class="news-list">
+            <!-- notícias serão inseridas aqui pelo JS -->
+            <div class="small">Carregando notícias…</div>
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="section-title">
+            <h3 style="margin:0">📝 Conteúdo</h3>
+            <div class="small">Guia rápido</div>
+          </div>
+          <p class="small">Use as notícias para criar posts no seu site e compartilhe jogos que geram Robux. Sempre cite as fontes oficiais quando republicar textualmente.</p>
+        </div>
+      </main>
+
+      <!-- coluna lateral: jogos e destaques -->
+      <aside>
+        <div id="jogos" class="card" style="margin-bottom:18px">
+          <div class="section-title">
+            <h3 style="margin:0">🎮 Jogos que dão Robux</h3>
+            <div class="small">Clique em um para abrir</div>
+          </div>
+
+          <div class="games">
+            <div class="game-card">
+              <h4>🪙 PLS DONATE</h4>
+              <img src="https://tr.rbxcdn.com/3aee7584a5579e720b15c81520cfb4c6/420/420/Image/Png" alt="PLS DONATE">
+              <p class="small">Crie barracas de doações e interaja para receber Robux de visitantes.</p>
+              <div style="margin-top:8px">
+                <a class="btn" href="https://www.roblox.com/games/8737602449/PLS-DONATE" target="_blank">🎮 Jogar</a>
+              </div>
+            </div>
+
+            <div class="game-card">
+              <h4>🎨 Starving Artists / Artistas</h4>
+              <img src="https://tr.rbxcdn.com/8c417d0c08a7d358b1a0db7f6bfe1c21/420/420/Image/Png" alt="Starving Artists">
+              <p class="small">Desenhe, exponha e venda suas artes para ganhar Robux.</p>
+              <div style="margin-top:8px">
+                <a class="btn" href="https://www.roblox.com/games/8054462345/Starving-Artists" target="_blank">🎨 Jogar</a>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px" class="small">Quer outros jogos aqui? Responda nesta conversa e eu adiciono.</div>
+        </div>
+
+        <div class="card">
+          <h4 style="margin-top:0">🔗 Recursos</h4>
+          <p class="small">Feeds usados (padrão): <br>
+            • Blog Roblox (categoria notícias) — feed RSS público. <br>
+            • Roblox Newsroom / corp — caso tenha feed público, será possível adicionar. 
+          </p>
+          <a class="secondary" href="#noticias">Atualizar notícias</a>
+        </div>
+      </aside>
     </div>
 
-    <div class="game-preview">
-      <h4>🎨 Artistas Famintos</h4>
-      <img src="https://tr.rbxcdn.com/8c417d0c08a7d358b1a0db7f6bfe1c21/420/420/Image/Png" alt="Artistas Famintos">
-      <p>Desenhe e venda suas artes para ganhar Robux!</p>
-      <a href="ganhar-robux.html">Ver mais</a>
-    </div>
-  </section>
+    <footer>
+      <div class="small">DicasRoblox News • Atualiza automaticamente via RSS — modifique os feeds no script conforme quiser.</div>
+    </footer>
+  </div>
 
-  <footer>
-    <p>💡 Dica: Crie conteúdos criativos e divirta-se jogando!</p>
-    <p>DicasRoblox • Feito com ❤️ para fãs de Roblox</p>
-  </footer>
+  <script>
+    /*
+      Auto-news loader (cliente):
+      - Busca vários feeds RSS (XML) via proxy CORS "allorigins" (gratuito) para evitar bloqueio CORS.
+      - Faz parse do XML e exibe os itens mais recentes.
+      - Você pode trocar / adicionar feeds na lista `feeds`.
+      - Limite: serviços públicos podem ter rate limits — para uso sério, recomenda-se uma função server-side ou serviços pagos.
+    */
 
+    const feeds = [
+      // exemplo de feed do Blog oficial do Roblox (categoria notícias PT-BR)
+      "https://blog.roblox.com/pt-br/category/noticias/feed",
+      // você pode adicionar outros feeds públicos aqui (RSS/Atom)
+      // "https://blog.roblox.com/category/news/feed", // inglês, se quiser
+    ];
+
+    const NEWS_COUNT_PER_FEED = 5;
+    const newsContainer = document.getElementById('news-container');
+
+    function createNewsElement(title, link, date, desc, image) {
+      const wrap = document.createElement('div');
+      wrap.className = 'news-item';
+
+      const img = document.createElement('img');
+      img.className = 'news-thumb';
+      img.src = image || 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="68"><rect width="100%" height="100%" fill="%230b1220"/></svg>';
+      img.alt = title;
+
+      const meta = document.createElement('div');
+      meta.className = 'news-meta';
+
+      const h4 = document.createElement('h4');
+      const a = document.createElement('a');
+      a.href = link;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = title;
+      a.style.color = 'white';
+      a.style.textDecoration = 'none';
+      h4.appendChild(a);
+
+      const p = document.createElement('p');
+      p.innerHTML = desc ? (desc.length > 180 ? desc.slice(0,180) + '...' : desc) : '';
+      p.className = 'small';
+
+      const dt = document.createElement('div');
+      dt.className = 'small';
+      dt.style.marginTop = '6px';
+      if (date) {
+        const d = new Date(date);
+        dt.textContent = d.toLocaleString();
+      }
+
+      meta.appendChild(h4);
+      meta.appendChild(p);
+      meta.appendChild(dt);
+
+      wrap.appendChild(img);
+      wrap.appendChild(meta);
+      return wrap;
+    }
+
+    async function fetchFeedRss(url) {
+      try {
+        // allorigins proxy to avoid CORS issues:
+        const proxy = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(url);
+        const res = await fetch(proxy);
+        if (!res.ok) throw new Error('Erro ao buscar feed: ' + res.status);
+        const text = await res.text();
+        // parse XML
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(text, "application/xml");
+        const items = xml.querySelectorAll('item, entry');
+        const results = [];
+        for (let i = 0; i < Math.min(items.length, NEWS_COUNT_PER_FEED); i++) {
+          const it = items[i];
+          const titleEl = it.querySelector('title');
+          const linkEl = it.querySelector('link');
+          // link may be in <link> or <link href="">
+          let link = '';
+          if (linkEl) {
+            link = linkEl.textContent || linkEl.getAttribute('href') || '';
+          } else {
+            const altLink = it.querySelector('link[type="text/html"]') || it.querySelector('link[href]');
+            link = altLink ? (altLink.getAttribute('href') || altLink.textContent) : '';
+          }
+          const descEl = it.querySelector('description') || it.querySelector('summary') || it.querySelector('content');
+          const pubDateEl = it.querySelector('pubDate') || it.querySelector('published') || it.querySelector('updated');
+          // attempt to find image (media:content or enclosure or og:image inside description)
+          let image = null;
+          const media = it.querySelector('media\\:content, enclosure');
+          if (media && media.getAttribute) {
+            image = media.getAttribute('url') || media.getAttribute('src') || null;
+          }
+          // try extract <img> from description HTML
+          if (!image && descEl) {
+            const descHtml = descEl.textContent || descEl.innerHTML || '';
+            const m = descHtml.match(/<img[^>]+src=["']([^"']+)["']/i);
+            if (m) image = m[1];
+          }
+          results.push({
+            title: titleEl ? titleEl.textContent.trim() : 'Sem título',
+            link: link || url,
+            date: pubDateEl ? pubDateEl.textContent : '',
+            desc: descEl ? (descEl.textContent || descEl.innerHTML || '') : '',
+            image
+          });
+        }
+        return results;
+      } catch (err) {
+        console.error('fetchFeedRss error', err);
+        return [{
+          title: 'Erro ao carregar feed',
+          link: '#',
+          date: '',
+          desc: err.message,
+          image: null
+        }];
+      }
+    }
+
+    async function loadAllFeeds() {
+      newsContainer.innerHTML = '<div class="small">Carregando notícias...</div>';
+      const allNews = [];
+      for (const f of feeds) {
+        const items = await fetchFeedRss(f);
+        // tag feed origin
+        items.forEach(it => it.origin = f);
+        allNews.push(...items);
+      }
+
+      // sort by date if possible (newest first)
+      allNews.sort((a,b) => {
+        const da = a.date ? new Date(a.date).getTime() : 0;
+        const db = b.date ? new Date(b.date).getTime() : 0;
+        return db - da;
+      });
+
+      // render top 12
+      newsContainer.innerHTML = '';
+      const top = allNews.slice(0, 12);
+      if (top.length === 0) {
+        newsContainer.innerHTML = '<div class="small">Nenhuma notícia encontrada.</div>';
+        return;
+      }
+      top.forEach(n => {
+        const el = createNewsElement(n.title, n.link, n.date, n.desc, n.image);
+        newsContainer.appendChild(el);
+      });
+    }
+
+    // initial load
+    loadAllFeeds();
+
+    // auto refresh every 5 minutes (300000 ms)
+    setInterval(loadAllFeeds, 300000);
+
+    // NOTE: for production or heavy use, consider:
+    // - moving fetch/parsing to a serverless function (GitHub Actions, Netlify Functions) to avoid rate limits
+    // - caching results and exposing a JSON endpoint your static site reads
+  </script>
 </body>
 </html>
