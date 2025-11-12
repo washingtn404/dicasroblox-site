@@ -3,57 +3,175 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ganhar Robux — DicasRoblox</title>
-  <meta name="description" content="Aprenda formas seguras de ganhar Robux nos jogos PLS DONATE e Artistas Famintos." />
+  <title>DicasRoblox — Dicas e Truques de Roblox</title>
+  <meta name="description" content="Dicas, guias e vídeos rápidos para dominar Roblox. Tutoriais, top jogos, economizar Robux e ganhar fãs." />
   <style>
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;background:#0b1220;color:#e6eef8}
-    header{padding:24px 20px;display:flex;align-items:center;justify-content:space-between;background:#0f1724}
-    .brand{display:flex;align-items:center;gap:10px}
-    .logo{width:50px;height:50px;border-radius:10px;background:linear-gradient(135deg,#ff6b81,#ff4757);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
-    nav a{color:#a6b0c3;text-decoration:none;margin-left:12px}
-    main{padding:20px}
-    h1{text-align:center;margin-bottom:20px}
-    .game-card{background:#0f1724;border-radius:12px;padding:16px;margin-bottom:30px;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,0.4)}
-    .game-card img{width:100%;max-width:600px;border-radius:12px;margin-bottom:10px}
-    .btn{display:inline-block;margin-top:10px;padding:10px 18px;border-radius:10px;background:linear-gradient(90deg,#ff4757,#ff6b81);color:white;text-decoration:none;font-weight:600}
-    p{color:#a6b0c3;max-width:800px;margin:10px auto}
-    footer{text-align:center;padding:20px;color:#a6b0c3;font-size:14px}
+    :root{
+      --bg:#0b1220;
+      --card:#0f1724;
+      --accent:#ff4757;
+      --muted:#a6b0c3;
+      --glass:rgba(255,255,255,0.03)
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;
+      background:linear-gradient(180deg,var(--bg),#061021);
+      color:#e6eef8
+    }
+    header{
+      padding:28px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px
+    }
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#ff6b81,#ff4757);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:white;
+      font-size:20px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.5)
+    }
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:12px
+    }
+    .hero{
+      padding:30px 20px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      align-items:center
+    }
+    .hero .card{
+      background:var(--card);
+      padding:20px;
+      border-radius:14px;
+      box-shadow:0 6px 18px rgba(2,6,23,0.6)
+    }
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);margin:8px 0 0}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:16px;
+      padding:20px
+    }
+    .tip{
+      background:var(--glass);
+      padding:16px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.03)
+    }
+    .tip h3{margin:0 0 8px}
+    .btn{
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:10px;
+      background:linear-gradient(90deg,var(--accent),#ff7b8a);
+      color:white;
+      text-decoration:none;
+      font-weight:600
+    }
+    footer{
+      padding:20px;
+      color:var(--muted);
+      text-align:center;
+      font-size:14px
+    }
+    .small{font-size:13px;color:var(--muted)}
+    .preview img{
+      width:100%;
+      border-radius:10px;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="brand">
       <div class="logo">DR</div>
-      <div><strong>DicasRoblox</strong></div>
+      <div>
+        <div style="font-weight:700">DicasRoblox</div>
+        <div class="small">Dicas rápidas, guias e estratégias</div>
+      </div>
     </div>
     <nav>
-      <a href="index.html">Início</a>
+      <a href="#top">Início</a>
       <a href="ganhar-robux.html">Ganhar Robux</a>
+      <a href="#guias">Guias</a>
+      <a href="#monetizar">Ganhar com dicas</a>
+      <a href="#contato">Contato</a>
     </nav>
   </header>
 
   <main>
-    <h1>💸 Como Ganhar Robux Jogando</h1>
+    <section class="hero">
+      <div class="card">
+        <h1>Bem-vindo ao DicasRoblox</h1>
+        <p class="lead">Tutoriais fáceis, estratégias vencedoras e atualizações dos melhores jogos de Roblox — prontos para copiar e usar em minutos.</p>
 
-    <section class="game-card">
-      <h2>🪙 PLS DONATE</h2>
-      <img src="https://tr.rbxcdn.com/180DAY-5bfc621cf792a342b72b6f78d696bdad/768/432/Image/Webp" alt="PLS DONATE" />
-      <p>No <strong>PLS DONATE</strong>, você pode criar uma barraca de doações onde outros jogadores podem comprar seus passes de jogo, doando Robux para você. Personalize sua barraca com textos criativos, emojis e temas que chamem atenção!</p>
-      <a class="btn" href="https://www.roblox.com/games/8737602449/PLS-DONATE" target="_blank">🎮 Jogar PLS DONATE</a>
+        <div style="margin-top:20px;">
+          <a class="btn" href="ganhar-robux.html">💸 Como Ganhar Robux</a>
+        </div>
+
+        <hr style="margin:18px 0;border:none;border-top:1px solid rgba(255,255,255,0.04)" />
+
+        <div class="small">Destaques</div>
+        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+          <div style="padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:600">Top 5 mapas</div>
+          <div style="padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:600">Economizar Robux</div>
+          <div style="padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:600">Como viralizar</div>
+        </div>
+      </div>
     </section>
 
-    <section class="game-card">
-      <h2>🎨 Artistas Famintos (Starving Artists)</h2>
-      <img src="https://tr.rbxcdn.com/180DAY-bb3d743f2f9bdb06f09b56e321dd3b36/768/432/Image/Webp" alt="Starving Artists" />
-      <p>No jogo <strong>Artistas Famintos</strong>, você pode desenhar suas próprias artes e vender para outros jogadores. Cada pintura vendida gera Robux! É uma ótima opção para quem ama desenhar e quer transformar arte em lucro.</p>
-      <a class="btn" href="https://www.roblox.com/games/8054462345/Starving-Artists" target="_blank">🎨 Jogar Artistas Famintos</a>
+    <section id="ganhar" style="padding:0 20px 20px;">
+      <h2 style="margin-bottom:10px;">Jogos para Ganhar Robux 💰</h2>
+      <p class="small">Veja os melhores jogos para conseguir Robux de forma segura e divertida!</p>
+      <div class="grid">
+        <div class="tip preview">
+          <h3>🪙 PLS DONATE</h3>
+          <img src="https://tr.rbxcdn.com/180DAY-5bfc621cf792a342b72b6f78d696bdad/768/432/Image/Webp" alt="PLS DONATE">
+          <p class="small">Crie uma barraca e receba doações de outros jogadores!</p>
+          <a class="btn" href="ganhar-robux.html">Ver mais</a>
+        </div>
+        <div class="tip preview">
+          <h3>🎨 Artistas Famintos</h3>
+          <img src="https://tr.rbxcdn.com/180DAY-bb3d743f2f9bdb06f09b56e321dd3b36/768/432/Image/Webp" alt="Artistas Famintos">
+          <p class="small">Desenhe suas próprias artes e venda para outros jogadores.</p>
+          <a class="btn" href="ganhar-robux.html">Ver mais</a>
+        </div>
+      </div>
     </section>
 
-    <p style="text-align:center">💡 Dica: Seja criativo nas suas descrições e artes! Jogadores gostam de apoiar quem tem ideias originais.</p>
+    <section id="guias" style="padding:0 20px 18px">
+      <h2>Guias rápidos</h2>
+      <div class="grid">
+        <article class="tip">
+          <h3>Como ganhar Robux grátis (dicas seguras)</h3>
+          <p class="small">Participe de eventos e promoções oficiais do Roblox. Evite sites de terceiros!</p>
+          <a class="btn" href="ganhar-robux.html">Ver jogos</a>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>DicasRoblox • Feito com ❤️ para quem quer aprender e ganhar Robux</p>
+    <div>DicasRoblox • Criado com ❤️ para jogadores</div>
   </footer>
 </body>
 </html>
